@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-	    sh 'docker build -t sailusha/jenkins:$BUILD_NUMBER .'
+	    sh 'docker build -t sailusha/jenkins-repos:$BUILD_NUMBER .'
       }
     }
     stage('Login') {
@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-         sh 'docker push sailusha/jenkins:$BUILD_NUMBER'
+         sh 'docker push sailusha/jenkins-repos:$BUILD_NUMBER'
       }
     }
     
